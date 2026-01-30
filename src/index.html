@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>ProyectoDespliegue</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+  <div class="cow-world">
+  
+    <!-- Navigation -->
+    <nav class="navbar" [class.scrolled]="scrollY > 50">
+      <div class="nav-container">
+        <div class="logo">
+          <span class="cow-emoji">🐄</span>
+          <span class="logo-text">Cow World</span>
+        </div>
+        <div class="nav-links">
+          <a (click)="navigateTo('home')" [class.active]="activeSection === 'home'">Inicio</a>
+          <a (click)="navigateTo('meet-cows')" [class.active]="activeSection === 'meet-cows'">Conoce las Vacas</a>
+          <a (click)="navigateTo('fun-facts')" [class.active]="activeSection === 'fun-facts'">Datos Curiosos</a>
+          <a (click)="navigateTo('gallery')" [class.active]="activeSection === 'gallery'">Galería</a>
+        </div>
+      </div>
+    </nav>
+  
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+      <div class="hero-background">
+        <div class="cloud cloud-1"></div>
+        <div class="cloud cloud-2"></div>
+        <div class="cloud cloud-3"></div>
+        <div class="grass-layer"></div>
+      </div>
+      
+      <div class="hero-content">
+        <h1 class="hero-title">
+          <span class="title-line-1">Bienvenido al</span>
+          <span class="title-line-2">Maravilloso</span>
+          <span class="title-line-3">Mundo de las Vacas</span>
+        </h1>
+        <p class="hero-subtitle">
+          Descubre la vida mágica de estos increíbles animales 🌈
+        </p>
+        <button class="cta-button" (click)="navigateTo('meet-cows')">
+          <span>Conoce a Nuestras Amigas</span>
+          <span class="button-emoji">🐮</span>
+        </button>
+      </div>
+  
+      <div class="hero-decoration">
+        <div class="floating-cow floating-cow-1">🐄</div>
+        <div class="floating-cow floating-cow-2">🐮</div>
+        <div class="floating-cow floating-cow-3">🐄</div>
+      </div>
+  
+      <div class="scroll-indicator">
+        <div class="mouse">
+          <div class="wheel"></div>
+        </div>
+        <p>Desliza hacia abajo</p>
+      </div>
+    </section>
+  
+    <!-- Meet Our Cows Section -->
+    <section id="meet-cows" class="meet-cows">
+      <div class="section-header">
+        <h2 class="section-title">
+          <span class="title-decoration">✨</span>
+          Conoce a Nuestras Estrellitas
+          <span class="title-decoration">✨</span>
+        </h2>
+        <p class="section-subtitle">Cada una con su personalidad única y encantadora</p>
+      </div>
+  
+      <div class="cows-grid">
+        <div *ngFor="let cow of cows; let i = index" 
+             class="cow-card" 
+             [style.animation-delay]="(i * 0.1) + 's'"
+             (click)="selectCow(cow)">
+          <div class="cow-card-inner">
+            <div class="cow-emoji-large">{{ cow.emoji }}</div>
+            <div class="cow-info">
+              <h3 class="cow-name">{{ cow.name }}</h3>
+              <p class="cow-breed">{{ cow.breed }}</p>
+              <div class="cow-color">
+                <span class="color-label">Color:</span>
+                <span class="color-value">{{ cow.color }}</span>
+              </div>
+              <div class="cow-fun-fact">
+                <span class="fact-icon">💡</span>
+                <span class="fact-text">{{ cow.funFact }}</span>
+              </div>
+            </div>
+            <div class="card-shine"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  
+    <!-- Fun Facts Section -->
+    <section id="fun-facts" class="fun-facts">
+      <div class="section-header">
+        <h2 class="section-title">
+          <span class="title-decoration">🎉</span>
+          Datos Súper Curiosos
+          <span class="title-decoration">🎉</span>
+        </h2>
+        <p class="section-subtitle">¡Prepárate para sorprenderte!</p>
+      </div>
+  
+      <div class="facts-container">
+        <div *ngFor="let fact of cowFacts; let i = index" 
+             class="fact-card"
+             [style.animation-delay]="(i * 0.15) + 's'">
+          <div class="fact-icon">{{ fact.icon }}</div>
+          <h3 class="fact-title">{{ fact.title }}</h3>
+          <p class="fact-description">{{ fact.description }}</p>
+          <div class="fact-decoration"></div>
+        </div>
+      </div>
+    </section>
+  
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery">
+      <div class="section-header">
+        <h2 class="section-title">
+          <span class="title-decoration">📸</span>
+          Galería de Momentos Felices
+          <span class="title-decoration">📸</span>
+        </h2>
+        <p class="section-subtitle">Capturando la alegría del campo</p>
+      </div>
+  
+      <div class="gallery-grid">
+        <div class="gallery-item gallery-item-1">
+          <div class="gallery-emoji">🐄</div>
+          <div class="gallery-label">Hora del Pasto</div>
+        </div>
+        <div class="gallery-item gallery-item-2">
+          <div class="gallery-emoji">🌻</div>
+          <div class="gallery-label">En la Pradera</div>
+        </div>
+        <div class="gallery-item gallery-item-3">
+          <div class="gallery-emoji">🐮</div>
+          <div class="gallery-label">Siesta Feliz</div>
+        </div>
+        <div class="gallery-item gallery-item-4">
+          <div class="gallery-emoji">🥛</div>
+          <div class="gallery-label">Leche Fresca</div>
+        </div>
+        <div class="gallery-item gallery-item-5">
+          <div class="gallery-emoji">🌈</div>
+          <div class="gallery-label">Después de la Lluvia</div>
+        </div>
+        <div class="gallery-item gallery-item-6">
+          <div class="gallery-emoji">🎵</div>
+          <div class="gallery-label">Concierto Pastoral</div>
+        </div>
+      </div>
+    </section>
+  
+    <!-- Statistics Section -->
+    <section class="statistics">
+      <div class="stats-container">
+        <div class="stat-item">
+          <div class="stat-number">1.5B</div>
+          <div class="stat-label">Vacas en el Mundo</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">350+</div>
+          <div class="stat-label">Razas Diferentes</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">30L</div>
+          <div class="stat-label">Leche por Día</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">100%</div>
+          <div class="stat-label">Pura Ternura</div>
+        </div>
+      </div>
+    </section>
+  
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h4>Cow World</h4>
+          <p>Celebrando la belleza y dulzura de las vacas desde 2025 🐄</p>
+        </div>
+        <div class="footer-section">
+          <h4>Síguenos</h4>
+          <div class="social-links">
+            <span class="social-icon">🌟</span>
+            <span class="social-icon">💚</span>
+            <span class="social-icon">🌻</span>
+          </div>
+        </div>
+        <div class="footer-section">
+          <h4>Contacto</h4>
+          <p>info&#64;cowworld.com</p>
+          <p>🌍 Visitanos en la granja</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Cow World. Hecho con 💕 y muuucho amor</p>
+      </div>
+    </footer>
+  
+    <!-- Modal for Cow Details -->
+    <div *ngIf="selectedCow" class="modal-overlay" (click)="closeModal()">
+      <div class="modal-content" (click)="$event.stopPropagation()">
+        <button class="modal-close" (click)="closeModal()">×</button>
+        
+        <div class="modal-emoji">{{ selectedCow.emoji }}</div>
+        
+        <h2 class="modal-title">{{ selectedCow.name }}</h2>
+        
+        <div class="modal-details">
+          <div class="modal-detail-item">
+            <span class="detail-label">Raza:</span>
+            <span class="detail-value">{{ selectedCow.breed }}</span>
+          </div>
+          <div class="modal-detail-item">
+            <span class="detail-label">Color:</span>
+            <span class="detail-value">{{ selectedCow.color }}</span>
+          </div>
+        </div>
+        
+        <div class="modal-fun-fact">
+          <div class="fun-fact-header">
+            <span class="fact-emoji">💡</span>
+            <span>Dato Curioso</span>
+          </div>
+          <p>{{ selectedCow.funFact }}</p>
+        </div>
+  
+        <div class="modal-decoration">
+          <div class="sparkle">✨</div>
+          <div class="sparkle">✨</div>
+          <div class="sparkle">✨</div>
+        </div>
+      </div>
+    </div>
+  
+  </div>
+</body>
+</html>
