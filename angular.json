@@ -16,17 +16,18 @@
         "build": {
           "builder": "@angular/build:application",
           "options": {
+            "outputPath": "dist/practica-github-pages",
+            "index": "src/index.html",
             "browser": "src/main.ts",
             "tsConfig": "tsconfig.app.json",
             "assets": [
-              {
-                "glob": "**/*",
-                "input": "public"
-              }
+              "src/favicon.ico",
+              "src/assets"
             ],
             "styles": [
-              "src/index.css"
-            ]
+              "src/styles.css"
+            ],
+            "scripts": []
           },
           "configurations": {
             "production": {
