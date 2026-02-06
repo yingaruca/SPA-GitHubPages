@@ -17,6 +17,8 @@
         "build": {
           "builder": "@angular/build:application",
           "options": {
+             "baseHref": "/SPA-GitHubPages/",
+            "deployUrl": "/SPA-GitHubPages/",
             "outputPath": "dist/practica-github-pages",
             "index": "src/index.html",
             "browser": "src/main.ts",
