@@ -1,21 +1,30 @@
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
-<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
-<!-- * * * * * * * * * * and can be replaced.  * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * Delete the template below * * * * * * * * * -->
-<!-- * * * * * * * to get started with your project! * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<div class="cow-world">
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="logo">
+        <span class="cow-emoji">🐄</span>
+        <span class="logo-text">Cow World</span>
+      </div>
+      <div class="nav-links">
+        <a routerLink="/home" routerLinkActive="active">Inicio</a>
+        <a routerLink="/vacas" routerLinkActive="active">Conoce las Vacas</a>
+        <a routerLink="/curiosidades" routerLinkActive="active">Datos Curiosos</a>
+        <a routerLink="/galeria" routerLinkActive="active">Galería</a>
+      </div>
+    </div>
+  </nav>
 
+  <router-outlet></router-outlet>
 
-
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * The content above * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * * -->
-<!-- * * * * * * * * * * and can be replaced.  * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * End of Placeholder  * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-
-
-<router-outlet />
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h4>Cow World</h4>
+        <p>Celebrando la belleza y dulzura de las vacas desde 2025 🐄</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Cow World. Hecho con 💕 y muuucho amor</p>
+    </div>
+  </footer>
+</div>

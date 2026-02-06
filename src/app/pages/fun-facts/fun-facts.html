@@ -1,0 +1,18 @@
+<section id="fun-facts" class="fun-facts">
+  <div class="section-header">
+    <h2 class="section-title">
+      <span class="title-decoration">🎉</span>
+      Datos Súper Curiosos
+      <span class="title-decoration">🎉</span>
+    </h2>
+    <p class="section-subtitle">¡Prepárate para sorprenderte!</p>
+  </div>
+
+  <div class="facts-container">
+    <div *ngFor="let fact of cowFacts" class="fact-card">
+      <div class="fact-icon">{{ fact.icon }}</div>
+      <h3 class="fact-title">{{ fact.title }}</h3>
+      <p class="fact-description">{{ fact.description }}</p>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,75 @@
+.meet-cows {
+  padding: 4rem 2rem;
+  background:linear-gradient(45deg, #A8DAFF 0%, #D4BBF7 100%);
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.section-subtitle {
+  font-size: 1.2rem;
+  color: #666;
+}
+
+.cows-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.cow-card {
+  background: white;
+  border-radius: 15px;
+  padding: 2rem;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+
+.cow-card:hover {
+  transform: translateY(-5px);
+}
+
+.cow-emoji-large {
+  font-size: 4rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.cow-name {
+  font-size: 1.5rem;
+  color: #667eea;
+  margin-bottom: 0.5rem;
+}
+
+.cow-breed {
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.cow-color {
+  margin-bottom: 1rem;
+}
+
+.color-label {
+  font-weight: bold;
+}
+
+.cow-fun-fact {
+  background: #f0f0f0;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.fact-icon {
+  margin-right: 0.5rem;
+}

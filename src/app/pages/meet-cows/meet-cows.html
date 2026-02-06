@@ -1,0 +1,30 @@
+<section id="meet-cows" class="meet-cows">
+  <div class="section-header">
+    <h2 class="section-title">
+      <span class="title-decoration">✨</span>
+      Conoce a Nuestras Estrellitas
+      <span class="title-decoration">✨</span>
+    </h2>
+    <p class="section-subtitle">Cada una con su personalidad única y encantadora</p>
+  </div>
+
+  <div class="cows-grid">
+    <div *ngFor="let cow of cows" class="cow-card">
+      <div class="cow-card-inner">
+        <div class="cow-emoji-large">{{ cow.emoji }}</div>
+        <div class="cow-info">
+          <h3 class="cow-name">{{ cow.name }}</h3>
+          <p class="cow-breed">{{ cow.breed }}</p>
+          <div class="cow-color">
+            <span class="color-label">Color:</span>
+            <span class="color-value">{{ cow.color }}</span>
+          </div>
+          <div class="cow-fun-fact">
+            <span class="fact-icon">💡</span>
+            <span class="fact-text">{{ cow.funFact }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
